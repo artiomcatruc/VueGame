@@ -3,9 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>My Race in StarCraft 2</title>
 </head>
 <body>
-    
+    <div class="main">
+
+        <div class="app" v-show=" showMain">
+            <div class="app__header">
+                <img src="img/logo.png" class="app__logo">
+            </div>
+            <div class="app__body">
+                <button class="app__btn" @click="goToQuestions">
+                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+                    <div class="app__btn-text">Начать</div>
+                </button>
+                <button class="app__btn" v-on:click="goToAchivments">
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                    <div class="app__btn-text">Достижения</div>
+                </button>
+                <button class="app__btn" @click="goToSocial">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <div class="app__btn-text">Автор</div>
+                </button>
+                <button class="app__btn btn__sound">
+                    <i class="fa fa-volume-up" aria-hidden="true"></i>
+                    <div class="app__btn-text">Звук</div>
+                </button>
+            </div>
+        </div>
+
+
+
+        <div class="app achivments" v-show="showAchivments">
+            <div class="app__body">
+                <div class="app__body-inner">
+                    <h2 class="app__body-title">
+                        <i class="fa fa-trophy" aria-hidden="true"></i>
+                        Достижения
+                    </h2>
+                    <div class="app__body-top">
+                        <div class="app__card">
+                            <div class="app__card-text">Счёт</div>
+                            <div class="app__card-count">0</div>
+                        </div>
+                        <div class="app__card">
+                            <div class="app__card-text">Открыто рас</div>
+                            <div class="app__card-count">0</div>
+                        </div>
+                        <div class="app__card">
+                            <div class="app__card-text">Всего игр</div>
+                            <div class="app__card-count">0</div>
+                        </div>
+                        <div class="app__card">
+                            <div class="app__card-text">Любимая раса</div>
+                            <div class="app__card-count">0</div>
+                        </div>
+                    </div>
+                    <div class="app__body-middle">
+                        <div class="app_result">
+                            <div class="app__result-score">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <div class="app__result-count">150</div>
+                            </div>
+                            <div class="app__result-name">Зерг</div>
+                            <div class="app__result-amount">5</div>
+                        </div>
+                    </div>
+                    <div class="app__body-bottom">
+                        <button class="app__btn btn__back btn_achivment">
+                            <i class="fa fa-reply" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="app" v-show="showQuestions">
+            <div class="app__header">
+                <div class="app__header-inner">
+                    <div class="app__count"># 1</div>
+                    <div class="app__text">Текст вопроса</div>
+                </div>
+            </div>
+            <div class="app__body">
+                <button class="app__btn">
+                    <div class="app__btn-text">Ответ</div>
+                </button>
+            </div>
+        </div>
+
+        <div class="app" v-show=" showSocial">
+            <div class="app__body">
+                <a target="_blank" href="https://vk.com/login?u=2&to=L2FsX2ZlZWQucGhw" class="app__btn">
+                    <i class="fa fa-vk" aria-hidden="true"></i>
+                    <div class="app__btn-text">VK</div>
+                </a>
+                <a target="_blank" href="https://www.youtube.com/" class="app__btn" >
+                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                    <div class="app__btn-text">YouTube</div>
+                </a>
+                <a target="_blank" href="https://www.google.com/webhp?hl=en&ictx=2&sa=X&ved=0ahUKEwig76WJvpLwAhW3SEEAHQdACtQQPQgJ" class="app__btn" >
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <div class="app__btn-text">Gmail</div>
+                </a>
+                <button class="app__btn btn__back" @click="goToMain">
+                    <i class="fa fa-reply" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="app results" data-race="zerg" v-show="showResult">
+            <div class="app__body">
+                <div class="app__results-inner">
+                    <div class="results__title"></div>
+                    <div class="results__img">
+                        <img src="img/zerg_logo.png">
+                    </div>
+                    <div class="results__text-box">
+                        <p class="results__text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами.</p>
+                        <p class="results__quote">Цитата 1</p>
+                        <p class="results__quote">Цитата 2</p>
+                        <p class="results__author">Автор</p>
+                    </div>
+                    <div>
+                        <button class="app__btn btn__back btn_zerg">
+                            <i class="fa fa-reply" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/const.js"></script>
+    <script>
+        let app = new Vue({
+            el: '.main',
+            data :{
+                showMain : true,
+                showSocial : false,
+                showAchivments : false,
+                showQuestions : false,
+                showResult : false,
+                number : 0,
+                score :{
+                    'zerg' :0,
+                    'primal' : 0,
+                    'protos' : 0,
+                    'taldarim' : 0,
+                    'terran' : 0,
+                },
+                totalGame : localStorage.getItem('sc2ToatlGame') ? JSON.parse(localStorage.getItem('sc2ToatlGame')) : {
+                    'zerg' :0,
+                    'primal' : 0,
+                    'protos' : 0,
+                    'taldarim' : 0,
+                    'terran' : 0,
+                    'infested' : 0,
+                    'hybrid' : 0,
+                },
+                totalGames : localStorage.getItem('sc2ToatlGame') ? localStorage.getItem('sc2ToatlGame') : 0, 
+                questions : questions,
+                results : results,
+                resultRace : 'infested',
+            },
+            methods : {
+                goToMain() {
+                this.showMain = true
+                this.showSocial = false
+                this.showAchivments = false
+                this.showQuestions = false
+                this.showResult = false
+                }, 
+                goToSocial() {
+                this.showMain = false
+                this.showSocial = true
+                this.showAchivments = false
+                this.showQuestions = false
+                this.showResult = false
+                }, 
+                goToAchivments() {
+                if(this.totalGames > 0) {
+                this.showMain = false
+                this.showSocial = false
+                this.showAchivments = true
+                this.showQuestions = false
+                this.showResult = false
+                    } else {
+                        this.goToQuestions()
+                    } 
+
+                }, 
+                goToQuestions(){
+                  this.score = {
+                    'zerg' :0,
+                    'primal' : 0,
+                    'protos' : 0,
+                    'taldarim' : 0,
+                    'terran' : 0,
+                    }
+                    this.showMain = false
+                    this.showSocial = false
+                    this.showAchivments = false
+                    this.showQuestions = true
+                    this.showResult = false
+                },
+                goToResults(race) {
+                    this.showMain = false
+                    this.showSocial = false
+                    this.showAchivments = false
+                    this.showQuestions = false
+                    this.showResult = true
+                    this.resultRace = race 
+                } 
+            }
+        })
+    </script>
 </body>
 </html>
