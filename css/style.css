@@ -15,6 +15,7 @@ i.fa{
 .main{
     background-image: url(../img/background__main.jpg);
     background-repeat: repeat-x;
+    background-size: cover;
     animation: slide 90s linear infinite;
 }
 .app{

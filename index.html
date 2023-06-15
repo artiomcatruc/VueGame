@@ -30,7 +30,7 @@
                     <div class="app__btn-text">Автор</div>
                 </button>
                 <button class="app__btn btn__sound">
-                    <i class="fa fa-volume-up" aria-hidden="true"></i>
+                    <i class="fa fa-volume-off" aria-hidden="true"></i>
                     <div class="app__btn-text">Звук</div>
                 </button>
             </div>
@@ -48,33 +48,36 @@
                     <div class="app__body-top">
                         <div class="app__card">
                             <div class="app__card-text">Счёт</div>
-                            <div class="app__card-count">0</div>
+                            <div class="app__card-count">{{ totalScore }}</div>
                         </div>
                         <div class="app__card">
                             <div class="app__card-text">Открыто рас</div>
-                            <div class="app__card-count">0</div>
+                            <div class="app__card-count">{{ openRaces }}</div>
                         </div>
                         <div class="app__card">
                             <div class="app__card-text">Всего игр</div>
-                            <div class="app__card-count">0</div>
+                            <div class="app__card-count">{{ totalGames }}</div>
                         </div>
                         <div class="app__card">
                             <div class="app__card-text">Любимая раса</div>
-                            <div class="app__card-count">0</div>
+                            <div class="app__card-count">{{ favoriteRace }}</div>
                         </div>
                     </div>
                     <div class="app__body-middle">
-                        <div class="app_result">
+                        <div class="app_result" 
+                        v-for="(race, k) in results"
+                        v-show="showResultRace[k]"
+                        @click="goToResult(k)">
                             <div class="app__result-score">
                                 <i class="fa fa-star" aria-hidden="true"></i>
-                                <div class="app__result-count">150</div>
+                                <div class="app__result-count">{{ race.points }}</div>
                             </div>
-                            <div class="app__result-name">Зерг</div>
-                            <div class="app__result-amount">5</div>
+                            <div class="app__result-name">{{ race.name }}</div>
+                            <div class="app__result-amount">{{ totalGame[k] }}</div>
                         </div>
                     </div>
                     <div class="app__body-bottom">
-                        <button class="app__btn btn__back btn_achivment">
+                        <button class="app__btn btn__back btn_achivment" @click="goToMain">
                             <i class="fa fa-reply" aria-hidden="true"></i>
                         </button>
                     </div>
@@ -86,13 +89,15 @@
         <div class="app" v-show="showQuestions">
             <div class="app__header">
                 <div class="app__header-inner">
-                    <div class="app__count"># 1</div>
-                    <div class="app__text">Текст вопроса</div>
+                    <div class="app__count"># {{number+1}}</div>
+                    <div class="app__text">{{questions[number][0] }}</div>
                 </div>
             </div>
             <div class="app__body">
-                <button class="app__btn">
-                    <div class="app__btn-text">Ответ</div>
+                <button class="app__btn"
+                    v-for="(answer, i) in questions[number][1]"
+                    v-on:click = "nextQuestions(questions[number][2][i])">
+                    <div class="app__btn-text">{{answer}}</div>
                 </button>
             </div>
         </div>
@@ -117,21 +122,21 @@
             </div>
         </div>
 
-        <div class="app results" data-race="zerg" v-show="showResult">
+        <div class="app results" v-bind:data-race="resultRace" v-show="showResult">
             <div class="app__body">
                 <div class="app__results-inner">
-                    <div class="results__title"></div>
+                    <div class="results__title">{{results[resultRace].name}}</div>
                     <div class="results__img">
-                        <img src="img/zerg_logo.png">
+                        <img :src="'img/'+resultRace+'_logo.png'">
                     </div>
                     <div class="results__text-box">
-                        <p class="results__text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами.</p>
-                        <p class="results__quote">Цитата 1</p>
-                        <p class="results__quote">Цитата 2</p>
-                        <p class="results__author">Автор</p>
+                        <p class="results__text">{{results[resultRace].description}}</p>
+                        <p class="results__quote">{{results[resultRace]. quote1}}</p>
+                        <p class="results__quote">{{results[resultRace].quote2}}</p>
+                        <p class="results__author">{{results[resultRace].author}}</p>
                     </div>
                     <div>
-                        <button class="app__btn btn__back btn_zerg">
+                        <button :class="'app__btn btn__back btn_'+resultRace"  @click="goToAchivments">
                             <i class="fa fa-reply" aria-hidden="true"></i>
                         </button>
                     </div>
@@ -143,88 +148,6 @@
 
     <script src="js/vue.js"></script>
     <script src="js/const.js"></script>
-    <script>
-        let app = new Vue({
-            el: '.main',
-            data :{
-                showMain : true,
-                showSocial : false,
-                showAchivments : false,
-                showQuestions : false,
-                showResult : false,
-                number : 0,
-                score :{
-                    'zerg' :0,
-                    'primal' : 0,
-                    'protos' : 0,
-                    'taldarim' : 0,
-                    'terran' : 0,
-                },
-                totalGame : localStorage.getItem('sc2ToatlGame') ? JSON.parse(localStorage.getItem('sc2ToatlGame')) : {
-                    'zerg' :0,
-                    'primal' : 0,
-                    'protos' : 0,
-                    'taldarim' : 0,
-                    'terran' : 0,
-                    'infested' : 0,
-                    'hybrid' : 0,
-                },
-                totalGames : localStorage.getItem('sc2ToatlGame') ? localStorage.getItem('sc2ToatlGame') : 0, 
-                questions : questions,
-                results : results,
-                resultRace : 'infested',
-            },
-            methods : {
-                goToMain() {
-                this.showMain = true
-                this.showSocial = false
-                this.showAchivments = false
-                this.showQuestions = false
-                this.showResult = false
-                }, 
-                goToSocial() {
-                this.showMain = false
-                this.showSocial = true
-                this.showAchivments = false
-                this.showQuestions = false
-                this.showResult = false
-                }, 
-                goToAchivments() {
-                if(this.totalGames > 0) {
-                this.showMain = false
-                this.showSocial = false
-                this.showAchivments = true
-                this.showQuestions = false
-                this.showResult = false
-                    } else {
-                        this.goToQuestions()
-                    } 
-
-                }, 
-                goToQuestions(){
-                  this.score = {
-                    'zerg' :0,
-                    'primal' : 0,
-                    'protos' : 0,
-                    'taldarim' : 0,
-                    'terran' : 0,
-                    }
-                    this.showMain = false
-                    this.showSocial = false
-                    this.showAchivments = false
-                    this.showQuestions = true
-                    this.showResult = false
-                },
-                goToResults(race) {
-                    this.showMain = false
-                    this.showSocial = false
-                    this.showAchivments = false
-                    this.showQuestions = false
-                    this.showResult = true
-                    this.resultRace = race 
-                } 
-            }
-        })
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
