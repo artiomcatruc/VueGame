@@ -1,8 +1,8 @@
-/* Вопросы с ответами и изменение счета */
+
 const questions = [
     [
-        "Ваша любимая планета в мире StarCraft",
-        ["Слейн", "Айур", "Чар", "Мар-Сара", "Зерус"],
+        "Your favorite planet in the world StarCraft",
+        ["Slayn", "Aiur", "Char", "Mar_sara", "Zerus"],
         [
             "this.score.taldarim++",
             "this.score.protoss++",
@@ -12,8 +12,8 @@ const questions = [
         ]
     ],
     [
-        "Я река…",
-        ["А я звёздный охотник", "Враги плывущие обломки", "Ты моё море"],
+        "I am a river...",
+        ["And I'm a star hunter", "Enemies floating debris", "You are my sea"],
         [
             "this.score.protoss++; this.score.terran--",
             "this.score.primal++; this.score.protoss--; this.score.terran--",
@@ -21,8 +21,8 @@ const questions = [
         ]
     ],
     [
-        "С кем вы поговорите на копье Адуна?",
-        ["С Абатуром", "Со Свонном", "С Караксом"],
+        "Who will you speak to on the Spear of Adun?",
+        ["With Abathur", "With Swann", "With Karax"],
         [
             "this.score.protoss--",
             "this.score.protoss--",
@@ -31,8 +31,8 @@ const questions = [
     ],
 
     [
-        "Перед вами хорошо укреплённый терранский бункер",
-        ["Я ассимилирую эссенцию тиранозора, который обитает в этих местах и эволюционирую", "Запрошу орбитальный удар если они первые проявят агрессию", "Подойду поговорить с морпехами"],
+        "Before you is a well-fortified Terran bunker",
+        ["I assimilate the essence of the tyrannozor that lives in these places and evolve", "Request an orbital strike if they are the first to show aggression", "I'll go talk to the marines"],
         [
             "this.score.primal++; this.score.protoss--; this.score.terran--", 
             "this.score.protoss++; this.score.terran--", 
@@ -40,15 +40,15 @@ const questions = [
         ]
     ],
     [
-        "Как насчёт свалить со мной, ковбой?",
-        ["Чёрт, давно пора"],
+        "How about you leave with me, cowboy?",
+        ["Damn, it's long overdue"],
         [
             "this.score.terran++"
         ]
     ],
     [
-        "На вас напали",
-        ["Нам нужны роевики, споровики и плёточники", "Нужно вызвать кайдариновые монолиты и фотонные пушки", "Возвести планетарную крепость, бункеры и подвести осадные танки"],
+        "You were attacked",
+        ["We need swarmers, sporozoans and lashers", "Summon Khaydarin Monoliths and Photon Cannons", "Build a planetary fortress, bunkers and bring in siege tanks"],
         [
             "this.score.zerg+=2; this.score.protoss--; this.score.terran--", 
             "this.score.protoss++; this.score.terran--; this.score.zerg-=2", 
@@ -56,8 +56,8 @@ const questions = [
         ]
     ],
     [
-        "Королева приказывает вам обрушить свой гнев на миры доминиона",
-        ["Должен подчиниться", "Пока она собирает, я следую", "Её псионная сила на меня не действует"],
+        "The queen orders you to unleash your wrath on the worlds of the dominion",
+        ["Must obey", "While she collects I follow", "Her psionic power has no effect on me."],
         [
             "this.score.zerg++; this.score.protoss--", 
             "this.score.primal++; this.score.protoss--", 
@@ -65,8 +65,8 @@ const questions = [
         ]
     ],
     [
-        "Перед вами высший тамплиер",
-        ["Сильная эссенция, но я не могу её собрать", "Уничтожить протоссов", "Стать архонтом", "Спросить как дела у Артаниса"],
+        "Before you is the High Templar",
+        ["Strong essence, but I can't collect it", "Destroy the protoss", "Become an archon", "Ask Artanis how are you"],
         [
             "this.score.primal++; this.score.protoss--; this.score.terran--", 
             "this.score.zerg++; this.score.protoss--; this.score.terran--", 
@@ -75,16 +75,16 @@ const questions = [
         ]
     ],
     [
-        "Вы заметили морпеха который не подчиняется вашему приказу",
-        ["Уничтожить мимикрида", "Сделать ему выговор"],
+        "You've spotted a Marine disobeying your orders.",
+        ["Destroy mimicrid", "Reprimand him"],
         [
             "this.score.terran++", 
             "this.score.terran--"
         ]
     ],
     [
-        "На вас движется стая саранчидов",
-        ["Много эссенции, можно собрать", "Приказать им лететь дальше", "Попытаться уничтожить фениксами пока они в воздухе"],
+        "A swarm of locusts is moving towards you",
+        ["A lot of essence, you can collect", "Tell them to fly on", "Try to destroy the phoenixes while they are in the air"],
         [
             "this.score.primal++; this.score.protoss--", 
             "this.score.zerg++; this.score.protoss--", 
@@ -92,8 +92,8 @@ const questions = [
         ]
     ],
     [
-        "Вы видите изначальный омут рождения, что вы сделаете?",
-        ["Соберу много эссенции", "Моё тело не выдержит такую мощь", "Попытаюсь уничтожить это место"],
+        "You see the original pool of birth, what will you do?",
+        ["Gather a lot of essence", "My body can't handle this kind of power", "I'll try to destroy this place"],
         [
             "this.score.primal++; this.score.protoss--", 
             "this.score.zerg++; this.score.protoss--", 
@@ -101,8 +101,8 @@ const questions = [
         ]
     ],
     [
-        "Вы сильно устали сегодня",
-        ["Пойду в бар у Джорея", "Рой не знает усталости", "Слабые, падут первыми"],
+        "You are very tired today",
+        ["Go to Joey's Bar", "Roy knows no fatigue", "The weak will fall first"],
         [
             "this.score.terran++; this.score.zerg--", 
             "this.score.zerg++; this.score.terran--", 
@@ -110,8 +110,8 @@ const questions = [
         ]
     ],
     [
-        "Перед вами иерарх протоссов",
-        ["Вызвать на Рак-шир", "Поприветствовать фразой «Эн Таро Тассадар»", "Отправить рой в атаку"],
+        "Before you is the hierarch of the protoss",
+        ["Summon to Rak-shire", "Greet with the phrase «En Taro Tassadar»", "Send the swarm to attack"],
         [
             "this.score.taldarim++; this.score.zerg--", 
             "this.score.protoss++; this.score.zerg--", 
@@ -119,8 +119,8 @@ const questions = [
         ]
     ],
     [
-        "Зератул и Воразун",
-        ["Связаны Кхалой", "Муж и жена", "Тёмные тамплиеры", "Новый вид зергов"],
+        "Zeratul and Vorazun",
+        ["Bound by the Khala", "Husband and wife", "Dark Templar", "A new kind of zerg"],
         [
             "this.score.protoss--", 
             "this.score.protoss-=2", 
@@ -129,16 +129,16 @@ const questions = [
         ]
     ],
     [
-        "В этих местах много источников терразин",
-        ["Защищать месторождения от инопланетных захватчиков", "Добыть как можно больше, пока эти Талдаримские живчики не успели ничего понять"],
+        "There are many sources of terrazine in these places.",
+        ["Defend deposits from alien invaders", "Get as much as possible before these Taldarim bastards have time to understand anything"],
         [
             "this.score.taldarim++; this.score.terran--", 
             "this.score.terran++"
         ]
     ],
     [
-        "В лаборатории ставят опыты над бруталиском",
-        ["Бруталиск – вершина эволюции, нужен рою", "Поинтересоваться у парней, что интересного они узнали", "Бруталиск очень опасен лучше уничтожить его вместе с терранской лабораторией"],
+        "Brutalisk experiments in the lab",
+        ["Brutalisk - the pinnacle of evolution, needed by the swarm", "Ask the guys what interesting things they learned", "Brutalisk is very dangerous, it is better to destroy it along with the Terran laboratory"],
         [
             "this.score.zerg++; this.score.protoss--; this.score.terran--", 
             "this.score.terran++; this.score.protoss--; this.score.zerg--", 
@@ -146,8 +146,8 @@ const questions = [
         ]
     ],
     [
-        "Как зовут Свонна?",
-        ["Габриэль", "Джеймс", "Рори"],
+        "What is Swann's name?",
+        ["Gabriel", "James", "Rory"],
         [
             "this.score.terran--", 
             "this.score.terran--", 
@@ -155,8 +155,8 @@ const questions = [
         ]
     ],
     [
-        "Феникс - ",
-        ["Тамплиер", "Неразим", "Чистильщик", "Талдарим"],
+        "Phoenix -",
+        ["Templar", "Nerazim", "sweeper", "Taldarim"],
         [
             "this.score.protoss--", 
             "this.score.protoss--", 
@@ -165,8 +165,8 @@ const questions = [
         ]
     ],
     [
-        "Вам необходимо догнать материнский корабль протоссов",
-        ["Использую гиперпрыжок", "Перехвачу его, внедрив паразит", "Отправлю челнок с посланием"],
+        "You need to catch up with the protoss mothership",
+        ["Using hyperjump", "Intercept it by injecting a parasite", "I will send a shuttle with a message"],
         [
             "this.score.terran++; this.score.zerg--; this.score.protoss--", 
             "this.score.zerg++; this.score.protoss--; this.score.terran--", 
@@ -174,24 +174,24 @@ const questions = [
         ]
     ],
     [
-        "Зерги заразили командные центры Вирофагами",
-        ["Нужно уничтожить всех, чтобы эпидемия не распространилась", "Сжечь только зараженные строения и спасти как можно больше людей"],
+        "Zerg infested command centers with Virophages",
+        ["It is necessary to destroy everyone so that the epidemic does not spread.", "Burn only infected buildings and save as many people as possible"],
         [
             "this.score.protoss++; this.score.terran--", 
             "this.score.terran++; this.score.protoss--"
         ]
     ],
     [
-        "Пустота…",
-        ["Лучший друг человека", "Холодна"],
+        "Emptiness…",
+        ["Man's best friend", "Bleak"],
         [
             "this.score.protoss--", 
             "this.score.protoss++"
         ]
     ],
     [
-        "Как вы поприветствуете Джеймса Рейнора",
-        ["Друг Рейнор", "Привет, ковбой", "Мне нужна твоя эссенция"],
+        "How would you greet James Raynor",
+        ["Friend Raynor", "Hello cowboy", "I need your essence"],
         [
             "this.score.protoss++; this.score.terran--", 
             "this.score.terran++; this.score.protoss--", 
@@ -199,8 +199,8 @@ const questions = [
         ]
     ],
     [
-        "Вы собрали много кредитов на продаже терразина",
-        ["Нанять лучших головорезов доминиона", "Усовершенствовать технологии", "Отправить их в фонд Мёбиуса для изучения гибридов"],
+        "You collected a lot of credits selling terrazine",
+        ["Hire the best thugs in the dominion", "Improve technology", "Send them to the Möbius Foundation to study hybrids"],
         [
             "this.score.terran++", 
             "this.score.terran+=2", 
@@ -208,8 +208,8 @@ const questions = [
         ]
     ],
     [
-        "Амун собирается уничтожить Айур",
-        ["Помочь протоссам в битве", "Послать челноки на Шакурас и запросить помощь Золотой Армады", "Вызвать Флот Смерти и дать Амуну бой"],
+        "Amun is about to destroy Aiur",
+        ["Help the protoss in battle", "Send shuttles to Shakuras and request assistance from the Golden Armada", "Call in the Death Fleet and give Amun a fight"],
         [
             "this.score.terran++; this.score.protoss--", 
             "this.score.protoss++; this.score.zerg--", 
@@ -217,8 +217,8 @@ const questions = [
         ]
     ],
     [
-        "Зачем вы прилетели на Чар?",
-        ["Выследить и убить королеву клинков", "Найти Керриган и убедить вернуться на Мар-Сару", "Искупаться в слизи"],
+        "Why did you come to Char?",
+        ["Hunt down and kill the Queen of Blades", "Find Kerrigan and convince her to return to Mar Sara", "Bathe in slime"],
         [
             "this.score.protoss++; this.score.terran--; this.score.zerg-=2", 
             "this.score.terran++; this.score.protoss--; this.score.zerg-=2", 
@@ -226,62 +226,62 @@ const questions = [
         ]
     ]
 ];
-/* Данные для экранов резултата для каждой расы */
+
 const results = {
     'zerg': {
-        name: "Зерг",
-        description: "Вы истинный зерг, чистота эссенции и служение во славу роя это ваше предназначение. Ваша стая захватила множество миров и теперь рой стал ещё сильней. Королева Клинков довольна вами, продолжайте и дальше служить ей. Вы уважаете протоссов, но не считаете что у них есть шанс сохраниться как вид. Ведь они не могут эволюционировать и в масштабах вселенной их раса обречена на вымирание. Тераны это биомасса, их эссенция может быть ассимилирована и использована во благо роя.",
-        quote1: "-Понятие совершенства растяжимо. Можно стремиться, невозможно достичь. Совершенство, как цель, лишено смысла.",
-        quote2: "-Смерть не имеет значения, важна только эссенция.",
-        author: "(Абатур)",
+        name: "Zerg",
+        description: "You are a true zerg, purity of essence and service to the glory of the swarm is your destiny. Your flock has captured many worlds and now the swarm has become even stronger. The Queen of Blades is pleased with you, continue to serve her further. You respect the protoss, but don't think they have a chance to survive as a species. After all, they cannot evolve, and on the scale of the universe, their race is doomed to extinction. Terans are biomass, their essence can be assimilated and used for the good of the swarm.",
+        quote1: "-The concept of perfection is loose. It is possible to strive, it is impossible to achieve. Perfection as a goal is meaningless.",
+        quote2: "-Death doesn't matter, only the essence matters.",
+        author: "(Abathur)",
         points: "100"
     },
     'primal': {
-        name: "Изначальный зерг",
-        description: "Всё что вас интересует – это Эссенция, чем её больше тем лучше для вас. Вы эволюционируете, адаптируетесь и подстраиваетесь под окружающую среду. Нет таких проблем, которые вы не решите. Благодаря постоянному сбору эссенции вы можете в любой момент измениться. Эссенция это ваш образ жизни. Так много видов эссенции. Сотни видов. И с каждым годом всё больше. Нужно её всю собрать.",
-        quote1: "-Мне нужна эссенция. Эссенция это жизнь. Я жить без неё не могу.",
+        name: "Primal",
+        description: "All you are interested in is the Essence, the more of it the better for you. You evolve, adapt and adjust to the environment. There are no problems that you cannot solve. Thanks to the constant collection of essence, you can change at any time. Essence is your way of life. So many kinds of essence. Hundreds of species. And every year more and more. You need to collect it all.",
+        quote1: "-I need essence. Essence is life. I can't live without her.",
         quote2: "",
-        author: "(Дехака)",
+        author: "(Dehaka)",
         points: "120"
     },
     'terran': {
-        name: "Терран",
-        description: "Вас не интересуют проблемы протоссов и зергов, вечная вражда и опустошение миров. Кровавый след, который тянется с незапамятных времён за этими враждующими расами затрагивает и терранов, как бы сильно вы не старались не вмешиваться. Избежать контакта с протоссами не получилось, но с ними можно договориться в отличии от зергов. Простые человеческие радости украшают вашу жизнь. Общение с друзьями, поход в бар с хорошей музыкой, отдых на природе. Что еще нужно человеку.",
-        quote1: "-Не связывайтесь с ребятами с Мар-Сары.",
+        name: "Terran",
+        description: "You are not interested in the problems of the protoss and the zerg, the eternal enmity and devastation of the worlds. The trail of blood that has been trailing these warring races since time immemorial affects the Terrans, no matter how hard you try not to get involved. It was not possible to avoid contact with the protoss, but you can negotiate with them, unlike the zerg. Simple human joys adorn your life. Chatting with friends, going to a bar with good music, relaxing in nature. What else does a person need.",
+        quote1: "-Don't mess with the guys from Mar-Sara.",
         quote2: "",
-        author: "(Рейнор)",
+        author: "(Raynor)",
         points: "90"
     },
     'infested': {
-        name: "Заражённый терран",
-        description: "Судя по всему вас заразили зерги, теперь вы служите рою. Но это не мешает вам мечтать о мести зергам.",
-        quote1: "-Зараженные всегда поднимаются вновь.",
-        quote2: "-Когда ОЗД вернется в сектор, от вас ничего не останется.",
-        author: "(Стуков)",
+        name: "Infested",
+        description: "Apparently you were infected by the zerg, now you serve the swarm. But that doesn't stop you from dreaming of revenge on the Zerg.",
+        quote1: "-Infected always rise again.",
+        quote2: "-When the UED returns to the sector, there will be nothing left of you.",
+        author: "(Stukov)",
         points: "160"
     },
     'protoss': {
-        name: "Протосс",
-        description: "Вы горды и безупречны. Честь ведёт вас сквозь пучину неприятностей, которые подстерегают ваш народ со времён войны со Сверхразумом. За Айур вы готовы сражаться до смерти. Все протоссы стремятся быть похожими на вас. У вашего народа вечная вражда с зергами, очищать миры от их скверны и уничтожать улей за ульем вот что является вашей первостепенной целью. Пока зерги не будут уничтожены, протоссы не смогут спать спокойно.",
-        quote1: "-Сила в единстве.",
+        name: "Protoss",
+        description: "You are proud and perfect. Honor guides you through the troubles that have beset your people since the war with the Overmind. For Aiur, you are ready to fight to the death. All protoss strive to be like you. Your people have an eternal enmity with the zerg, cleansing the worlds of their filth and destroying hive after hive is your primary goal. Until the zerg are destroyed, the protoss will not be able to sleep peacefully.",
+        quote1: "-Strength in unity.",
         quote2: "",
-        author: "(Артанис)",
+        author: "(Artanis)",
         points: "80"
     },
     'taldarim': {
-        name: "Талдарим",
-        description: "В былые времена вы служили Амуну, падшему Зел-Нага, сейчас же ваш народ обрёл свободу. После того как Аларак стал владыкой талдаримов победив Малаша в поединке Рак-Шир, он не просто изменил свой статус в цепи вознесения, но и привел талдаримов к мирному сосуществованию с другими народами протоссов. Теперь можно восстанавливать свои миры как один единый сильный народ. И ваши навыки будут очень полезны в этой непростой задаче.",
-        quote1: "-Ты разговариваешь с владыкой.",
-        quote2: "-Как ты можешь мне послужить?",
-        author: "(Аларак)",
+        name: "Taldarim",
+        description: "Once upon a time you served Amon, the fallen Xel'Naga, but now your people have been freed. After Alarak became the master of the Taldarim by defeating Malasha in the Rak-Shir duel, he not only changed his status in the ascension chain, but also led the Taldarim to peaceful coexistence with other peoples of the protoss. Now you can restore your worlds as one single strong people. And your skills will be very useful in this difficult task.",
+        quote1: "- You're talking to the Lord.",
+        quote2: "-How can you serve me?",
+        author: "(Alarak)",
         points: "140"
     },
     'hybrid': {
-        name: "Гибрид",
-        description: "Чистота формы и чистота эссенции присутствует в вашем организме. Вы одно из немногих существ, которых стремились создать Зел-Нага. Доктор Наруд сумел воплотить все планы Зел-Нага в жизнь и теперь вы идеальное орудие. Не смотря на то что вы гибрид зерга и протосса вы не чувствуете симпатии к этим расам, а считаете высшей расой Гибридов.",
-        quote1: "-Всё только начинается. Амун шептал об этом с далёких звёзд.",
+        name: "Hybrid",
+        description: "The purity of form and the purity of essence are present in your body. You are one of the few beings that the xel'naga sought to create. Dr. Narud managed to bring all the plans of the Xel-Naga to life and now you are the perfect tool. Despite the fact that you are a hybrid of a zerg and a protoss, you do not feel sympathy for these races, but consider the hybrids to be the highest race.",
+        quote1: "-It's only begining. Amun whispered about it from distant stars.",
         quote2: "",
-        author: "(Наруд)",
+        author: "(Narud)",
         points: "200"
     }
 }

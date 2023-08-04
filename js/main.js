@@ -24,9 +24,9 @@ let app = new Vue({
             'hybrid' : 0,
         },
         totalGames: localStorage.getItem('sc2TotalGames') ? localStorage.getItem('sc2TotalGames') : 0, 
-        questions : questions,
-        results : results,
-        resultRace : 'infested',
+        questions: questions,
+        results: results,
+        resultRace: 'infested',
     },
     methods: {
         goToMain() {
@@ -75,7 +75,7 @@ let app = new Vue({
             this.showQuestions = false
             this.showResult = true
             this.resultRace = race 
-        } ,
+        },
         nextQuestions(answer){
             if(this.number == 24) {
                 this.number = 0 

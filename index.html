@@ -12,26 +12,26 @@
 <body>
     <div class="main">
 
-        <div class="app" v-show=" showMain">
+        <div class="app" v-show="showMain">
             <div class="app__header">
                 <img src="img/logo.png" class="app__logo">
             </div>
             <div class="app__body">
                 <button class="app__btn" @click="goToQuestions">
                     <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-                    <div class="app__btn-text">Начать</div>
+                    <div class="app__btn-text">Start</div>
                 </button>
                 <button class="app__btn" v-on:click="goToAchivments">
                     <i class="fa fa-trophy" aria-hidden="true"></i>
-                    <div class="app__btn-text">Достижения</div>
+                    <div class="app__btn-text">Achievements</div>
                 </button>
                 <button class="app__btn" @click="goToSocial">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <div class="app__btn-text">Автор</div>
+                    <div class="app__btn-text">Author</div>
                 </button>
                 <button class="app__btn btn__sound">
                     <i class="fa fa-volume-off" aria-hidden="true"></i>
-                    <div class="app__btn-text">Звук</div>
+                    <div class="app__btn-text">Sound</div>
                 </button>
             </div>
         </div>
@@ -43,23 +43,23 @@
                 <div class="app__body-inner">
                     <h2 class="app__body-title">
                         <i class="fa fa-trophy" aria-hidden="true"></i>
-                        Достижения
+                        Achievements
                     </h2>
                     <div class="app__body-top">
                         <div class="app__card">
-                            <div class="app__card-text">Счёт</div>
+                            <div class="app__card-text">Score</div>
                             <div class="app__card-count">{{ totalScore }}</div>
                         </div>
                         <div class="app__card">
-                            <div class="app__card-text">Открыто рас</div>
+                            <div class="app__card-text">Open races</div>
                             <div class="app__card-count">{{ openRaces }}</div>
                         </div>
                         <div class="app__card">
-                            <div class="app__card-text">Всего игр</div>
+                            <div class="app__card-text">Total Games</div>
                             <div class="app__card-count">{{ totalGames }}</div>
                         </div>
                         <div class="app__card">
-                            <div class="app__card-text">Любимая раса</div>
+                            <div class="app__card-text">Favorite Race</div>
                             <div class="app__card-count">{{ favoriteRace }}</div>
                         </div>
                     </div>
